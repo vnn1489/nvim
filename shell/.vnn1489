@@ -25,8 +25,11 @@
 #OT <--- SpaceCli ---> RUN CLI WITH INCOGNITO (DEPENDENCE DISTRO)
 #OT <--- !! ---> RUN LAST CLI
 #OT <--- du -sh FileOrDirectory --->
-#OT
-#OT
+#OT <--- cat /etc/hosts ---> VIEW ALL HOSTNAME EXISTING ON THE DEVICE
+#OT <--- sudo vim /etc/hostname ---> THEN EDIT HOSTNAME AS REQUIRED
+#OT <--- sudo hostname YourHostName ---> SET OR RESET HOST NAME
+#OT <---  --->
+#OT <---  --->
 
 
 #01 type | rwx  | rwx   | rwx
