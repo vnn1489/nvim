@@ -65,6 +65,15 @@
 #03 <--- netstat -tulpn ---> CHECK NETWORK & LISTENING PORTS
 #03 <--- scp PathOfFilesOrFolders HostName@IP:/Path ---> SEND
 #03 <--- scp HostName@IP:PathOfFilesOrFolders /Path ---> REVERSE
+#03 <--- ssh-key -t ed25519 -C "OptionName" ---> CREATE SSH KEY
+#03 <--- ssh-copy-id -i ~/.ssh/PublicKey.pub UserName@Ip  --->
+#03 <--- ssh -i ~/.ssh/PrivateKey UserName@Ip --->
+#03 <---  --->
+#03 <---  --->
+#03 <---  --->
+#03 <---  --->
+
+ 
 
 #04 USER STRUCTURE: username:password(at /etc/shadow):UID:GID:UserInfo(opt):HomeDirectory:DefaultShell
 #04 FILE: /etc/passwd | /etc/group | /etc/shadow ---> FILE ENCRYPT PASSWORD OF USERS
