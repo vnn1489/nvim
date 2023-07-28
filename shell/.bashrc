@@ -29,9 +29,15 @@ alias aptsp='apt-cache pkgnames'
 alias aptpd='apt show -a package'
 alias apti='sudo apt install -y'
 alias aptl='apt list --installed'
-alias aptr='sudo apt remove -y'
-alias aptp='sudo apt purge -y'
+alias aptr='sudo apt remove -y' # REMOVE APP BUT KEEP CONFIG
+alias aptp='sudo apt purge -y' # DELETE CONFIG WHEN REMOVE APP
 alias aptar='sudo apt autoremove -y' # REMOVE DEOENDENCIES OF APPS WAS REMOVE
+alias aptfu='sudo apt full-upgrade -y'
+alias aptinu='sudo apt install CreateVariableToEnterPackageName --no-upgrade'
+alias aptispec='sudo apt install PackageName=VersionNumber'
+alias aptlu='apt list --upgradable'
+alias aptli='apt list --installed'
+alias aptlav='apt list --all-versions'
 
 # YUM
 alias yums='yum search'
