@@ -3,7 +3,9 @@ APT
 
 - with deb: ferdium
 
-- apti curl ibus-unikey git snapd gh curl flameshot net-tools openssh-server xz-utils at sshpass spotify-client libreoffice code virtualbox-7.0 termius-app python3-pip
+- apti tmux vim curl ibus-unikey git snapd gh curl flameshot net-tools openssh-server xz-utils at sshpass libreoffice python3-pip
+
+code virtualbox-7.0 spotify-client
 
 manual: code, spotify, brave
 
