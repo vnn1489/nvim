@@ -3,7 +3,7 @@ APT
 
 - with deb: ferdium
 
-- apti curl tmux vim ibus-unikey git snapd gh curl flameshot net-tools openssh-server xz-utils at sshpass libreoffice python3-pip
+- apti curl tmux vim ibus-unikey git snapd gh curl flameshot net-tools openssh-server xz-utils at sshpass libreoffice python3-pip solaar
 
 code virtualbox-7.0 spotify-client
 
