@@ -6,6 +6,7 @@ alias sn='systemctl poweroff -i'
 alias rb='systemctl reboot -i'
 alias ...='cd ../../../'
 alias ....='../../../../'
+alias reload='source ~/.bashrc'
 
 # COMPRESSION & DECOMPRESSION
 alias extract='tar -xvf'
@@ -46,7 +47,11 @@ alias yumr='sudo yum remove -y'
 alias yumu='yum upgrade -y'
 
 # DNF
-alias dnfu='dnf upgrade -y'
+alias dnf-s='dnf search'
+alias dnf-i='sudo dnf install -y'
+alias dnf-r='sudo dnf remove -y'
+alias dnf-uu='sudo dnf update -y && sudo dnf upgrade -y'
+
 
 # NETWORK
 alias ipp='curl icanhazip.com'
