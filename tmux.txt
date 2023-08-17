@@ -1,5 +1,7 @@
 # USER MANUAL
 # CLOSE ALL SECTION & RESET TERMINAL AFTER SET FILE CONFIG
+# tmux ls --->
+# tmux kill-server --->
 # hold shift key + use mouse select content
 
 # send frifix
