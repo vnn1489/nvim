@@ -1,5 +1,6 @@
 # /etc/skel/.bashrc OR /home/UserName/.bashrc
 
+<--- MY ALIASES --->
 # COMMON
 alias sp='systemctl suspend -i'
 alias sn='systemctl poweroff -i'
