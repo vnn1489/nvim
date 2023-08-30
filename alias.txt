@@ -52,6 +52,7 @@ alias dnf-s='dnf search'
 alias dnf-i='sudo dnf install -y'
 alias dnf-r='sudo dnf remove -y'
 alias dnf-uu='sudo dnf update -y && sudo dnf upgrade -y'
+alias dnf-ar='sudo dnf autoremove -y'
 
 
 # NETWORK
