@@ -1,31 +1,116 @@
 # USER MANUAL
 # CLOSE ALL SECTION & RESET TERMINAL AFTER SET FILE CONFIG
-# tmux ls --->
 # tmux kill-server --->
 # hold shift key + use mouse select content
 
-# send frifix
-set-option -g prefix C-a
-unbind-key C-a
-bind-key C-a send-prefix
+# PANE
+# PRESS exit OR ctrl + d OR ctrl + (a OR b) > PRESS x > CHOOSE y OR n TO EXIT PANE
 
-# use alt arrow keys to switch panes
+# WINDOW
+# tmux new-window ---> 
+# ctrl + (a OR b) > PRESS p (PREVIOUS) OR n (NEXT) TO SWICTH WINDOW
+# ctrl + (a OR b) > PRESS 0 ~ 9 TO SWICTH WINDOW
+# ctrl + (a OR b) > PRESS , TO RENAME WINDOW
+# tmux rename-window CurrentWindow ---> RENAME WINDOW
+
+# SESSTION
+# ctrl + (a OR b) > PRESS d ---> COMEBACK ROOT TERMINAL
+# tmux attach OR tmux attach -t SessionNumber ---> COMEBACK TMUX TERMINAL
+# tmux ls OR tmux list-sessions --->
+# tmux rename-session SetNameSession --->
+# ctrl + (a OR b) > PRESS s > CHOOSE SESSION WITH KEY DOWN & UP
+
+# Initial setup
+set -g default-terminal xterm-256color
+set -g status-keys vi
+
+# USE C-f & C-j for the PREFIX
+set-option -g prefix C-j
+set-option -g prefix2 C-f
+unbind-key C-j
+bind-key C-j send-prefix
+set -g base-index 1
+
+# USE ALT-ARROW KEYS WITHOUT PREFIX KEY TO SWITCH PANES
 bind -n M-Left select-pane -L
 bind -n M-Right select-pane -R
 bind -n M-Up select-pane -U
 bind -n M-Down select-pane -D
 
-# shift arrow to switch windows
-bind -n S-Left previous-window
+# SET EASIER WINDOW SPLIT KEYS
+bind-key v split-window -h # ctrl + (a OR b) > PRESS shift + " ---> HORIZONTAL
+bind-key h split-window -v # ctrl + (a OR b) > PRESS shift + % ---> VERTICAL
+
+# SHIFT ARROW TO SWITCH WINDOWS
+bind -n S-Left  previous-window
 bind -n S-Right next-window
 
-# mouse mode
-setw -g mouse on
+# EASILY REODER WINDOWS WITH CTRL + SHIFT + ARROW KEY
+bind-key -n C-S-Left swap-window -t -1
+bind-key -n C-S-Right swap-window -t +1
 
-# set easier window split keys
-bind-key v split-window -h
-bind-key h split-window -v
+# SYNCHRONIZE PANES
+bind-key y set-window-option synchronize-panes\; display-message "synchronize mode toggled."
 
-# easy config reload
-bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reload."
-bind-key -T copy-mode-vi C-c send-keys -X cancel; send-keys -X begin-selection
+# EASY CONFIG RELOAD
+bind-key r source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
+
+# EASY CLEAR HISTORY
+bind-key L clear-history
+
+# KEY BINDINGS FOR COPY-PASTE
+setw -g mode-keys vi
+unbind p
+bind p paste-buffer
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+
+# MOUSE MODE
+set -g mouse on
+
+# LENGTHEN THE AMOUNT OF TIME STATUS MESSAGES ARE DISPLAYED
+set-option -g display-time 3000
+set-option -g display-panes-time 3000
+
+# SET THE BASE-INDEX TO 1 RATHER THAN 0
+set -g base-index 1
+set-window-option -g pane-base-index 1
+
+# AUTOMATICALLY SET WINDOW TITLE
+set-window-option -g automatic-rename on
+set-option -g set-titles on
+
+# ALLOW THE ARROW KEY TO BE USED IMMEDIATELY AFTER CHANGING WINDOWS.
+set-option -g repeat-time 0
+
+# NO DELAY FOR ESCAPE KEY PRESS
+set -sg escape-time 0
+
+# THEME
+set-window-option -g window-status-current-style bold,bg=blue,fg=colour234
+set-window-option -g window-status-style fg=colour35
+set -g window-status-activity-style bold,bg=colour234,fg=white
+set-option -g message-style bg=colour237,fg=colour231
+set-option -g pane-border-style fg=colour36
+set-option -g pane-active-border-style fg=colour35
+
+# CHANGE BACKGROUND COLOR OF A TAB WHEN ACTIVITY OCCURS
+setw -g monitor-activity on
+
+# DO NOT RESET THE COLOR OF THE TAB AFTER ACTIVITY STOPS OCCURING
+setw -g monitor-silence 0
+
+# DISABLE BELL
+setw -g monitor-bell on
+
+# DISABLE VISUAL TEXT BOX WHEN ACTIVITY OCCURS
+set -g visual-activity off
+
+# STATUS BAR
+set -g status-justify centre
+set -g status-bg black
+set -g status-fg colour35
+set -g status-interval 60
+set -g status-left-length 50
+set -g status-left "#[bg=colour35]💻#[fg=colour234,bold] #H#[bg=colour34]#[bg=colour35,nobold]#[fg=colour234] [#S] $tmux_target_lower"
+set -g status-right '#[bg=colour35] 🕔 #[fg=colour234,bold]%H:%M:%S '
