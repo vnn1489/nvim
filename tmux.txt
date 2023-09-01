@@ -1,26 +1,24 @@
-# USER MANUAL
 # CLOSE ALL SECTION & RESET TERMINAL AFTER SET FILE CONFIG
-# tmux kill-server --->
-# hold shift key + use mouse select content
 
-# PANE
-# PRESS exit OR ctrl + d OR ctrl + (a OR b) > PRESS x > CHOOSE y OR n TO EXIT PANE
-
-# WINDOW
-# tmux new-window ---> 
-# ctrl + (a OR b) > PRESS p (PREVIOUS) OR n (NEXT) TO SWICTH WINDOW
-# ctrl + (a OR b) > PRESS 0 ~ 9 TO SWICTH WINDOW
-# ctrl + (a OR b) > PRESS , TO RENAME WINDOW
-# tmux rename-window CurrentWindow ---> RENAME WINDOW
-
-# SESSTION
-# ctrl + (a OR b) > PRESS d ---> COMEBACK ROOT TERMINAL
+# CLI GUIDE
+# tmux kill-server ---> CLOSE ALL SESSION
+# tmux new-window ---> CREATE NEW WINDOW IN SESSION
+# tmux rename-window CurrentWindow ---> RENAME WINDOW INSIDE SESSION
 # tmux attach OR tmux attach -t SessionNumber ---> COMEBACK TMUX TERMINAL
-# tmux ls OR tmux list-sessions --->
-# tmux rename-session SetNameSession --->
-# ctrl + (a OR b) > PRESS s > CHOOSE SESSION WITH KEY DOWN & UP
+# tmux ls OR tmux list-sessions ---> LIST ALL CURRENT SECTION
+# tmux rename-session SetNameSession ---> RENAME SESSION
 
-# Initial setup
+# HOTKEY GUIDE (PURE)
+# PRESS exit OR ctrl + d OR ctrl + (a OR b) > PRESS x > CHOOSE y OR n ---> EXIT PANE
+# ctrl + b > PRESS p (PREVIOUS) OR n (NEXT) ---> SWICTH WINDOW
+# ctrl + b > PRESS 0 ~ 9 ---> SWICTH WINDOW
+# ctrl + b > PRESS , ---> RENAME WINDOW
+# ctrl + b > PRESS s ---> CHOOSE SESSION WITH KEY DOWN & UP
+# ctrl + b > PRESS d ---> COMEBACK ROOT TERMINAL
+# ctrl + b > PRESS shift + " ---> CREATE PANE WITH HORIZONTAL
+# ctrl + b > PRESS shift + % ---> CREATE PANE WITH VERTICAL
+
+# INITIAL SETUP
 set -g default-terminal xterm-256color
 set -g status-keys vi
 
@@ -38,8 +36,8 @@ bind -n M-Up select-pane -U
 bind -n M-Down select-pane -D
 
 # SET EASIER WINDOW SPLIT KEYS
-bind-key v split-window -h # ctrl + (a OR b) > PRESS shift + " ---> HORIZONTAL
-bind-key h split-window -v # ctrl + (a OR b) > PRESS shift + % ---> VERTICAL
+bind-key v split-window -h
+bind-key h split-window -v
 
 # SHIFT ARROW TO SWITCH WINDOWS
 bind -n S-Left  previous-window

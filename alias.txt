@@ -1,6 +1,6 @@
 # /etc/skel/.bashrc OR /home/UserName/.bashrc
 
-<--- MY ALIASES --->
+# <--- MY ALIASES --->
 # COMMON
 alias sp='systemctl suspend -i'
 alias sn='systemctl poweroff -i'
@@ -13,47 +13,47 @@ alias reload='source ~/.bashrc'
 alias extract='tar -xvf'
 
 # FLATPAK
-alias flatpaki='flatpak install flathub -y'
-alias flatpaku='flatpak uninstall --delete-data -y'
-alias flatpakl='flatpak list'
-alias flatpakr='flatpak run'
+alias flatpak-i='flatpak install flathub -y'
+alias flatpak-u='flatpak uninstall --delete-data -y'
+alias flatpak-l='flatpak list'
+alias flatpak-r='flatpak run'
 
 # SNAP
-alias snapi='sudo snap install'
-alias snapu='sudo snap remove'
-alias snapl='snap list --all'
+alias snap-i='sudo snap install'
+alias snap-u='sudo snap remove'
+alias snap-l='snap list --all'
 
 # APT
-alias aptuu='sudo apt update && sudo apt upgrade -y'
-alias aptudu='sudo apt update && sudo apt dist-upgrade -y'
-alias apts='apt search'
-alias aptsp='apt-cache pkgnames'
-alias aptpd='apt show -a package'
-alias apti='sudo apt install -y'
-alias aptl='apt list --installed'
-alias aptr='sudo apt remove -y' # REMOVE APP BUT KEEP CONFIG
-alias aptp='sudo apt purge -y' # DELETE CONFIG WHEN REMOVE APP
-alias aptar='sudo apt autoremove -y' # REMOVE DEOENDENCIES OF APPS WAS REMOVE
-alias aptfu='sudo apt full-upgrade -y'
-alias aptinu='sudo apt install CreateVariableToEnterPackageName --no-upgrade'
-alias aptispec='sudo apt install PackageName=VersionNumber'
-alias aptlu='apt list --upgradable'
-alias aptli='apt list --installed'
-alias aptlav='apt list --all-versions'
+alias apt-uu='sudo apt update && sudo apt upgrade -y'
+alias apt-udu='sudo apt update && sudo apt dist-upgrade -y'
+alias apt-s='apt search'
+alias apt-sp='apt-cache pkgnames'
+alias apt-pd='apt show -a package'
+alias apt-i='sudo apt install -y'
+alias apt-l='apt list --installed'
+alias apt-r='sudo apt remove -y' # REMOVE APP BUT KEEP CONFIG
+alias apt-p='sudo apt purge -y' # DELETE CONFIG WHEN REMOVE APP
+alias apt-ar='sudo apt autoremove -y' # REMOVE DEOENDENCIES OF APPS WAS REMOVE
+alias apt-fu='sudo apt full-upgrade -y'
+alias apt-inu='sudo apt install CreateVariableToEnterPackageName --no-upgrade' # su dung bien
+alias apt-ispec='sudo apt install PackageName=VersionNumber' # su dung bien
+alias apt-lu='apt list --upgradable'
+alias apt-li='apt list --installed'
+alias apt-lav='apt list --all-versions'
 
 # YUM
-alias yums='yum search'
-alias yumi='sudo yum install -y'
-alias yumr='sudo yum remove -y'
-alias yumu='yum upgrade -y'
+alias yum-s='yum search'
+alias yum-i='sudo yum install -y'
+alias yum-r='sudo yum remove -y'
+alias yum-u='yum upgrade -y'
 
 # DNF
 alias dnf-s='dnf search'
 alias dnf-i='sudo dnf install -y'
+alias dnf-ri='sudo dnf reinstall -y'
 alias dnf-r='sudo dnf remove -y'
 alias dnf-uu='sudo dnf update -y && sudo dnf upgrade -y'
 alias dnf-ar='sudo dnf autoremove -y'
-
 
 # NETWORK
 alias ipp='curl icanhazip.com'
