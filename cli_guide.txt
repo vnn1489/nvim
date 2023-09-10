@@ -1,0 +1,121 @@
+---- PERMISSION ----
+PERM    type    rwx     rwx     rwx
+PERM    d, l    421     421     421
+PERM    d, l    user    group   other
+PERM    0(---)  1(--x)  2(-w-)  3(-wx)  4(r--)  5(r-x)  6(rw-)  7(rwx)
+PERM    
+PERM    USE FLAG chmod -R TO SET PERMISSION WITH RECURSIVE FOR DIRECTORY
+PERM    chmod u±rwx FileOrDirectory ---> FOR SPECIFIC USER
+PERM    chmod a±rwx FileOrDirectory ---> FOR ALL USER
+PERM    chmod ±rwx FileOrDirectory --->
+PERM    chmod g±rwx FileOrDirectory ---> FOR GROUP
+PERM    chmod o±rwx FileOrDirectory ---> FOR OTHER USER
+PERM    chmod go±rwx FileOrDirectory ---> COMBINE FOR GROUP & OTHER USER
+PERM    chmod NumberNumberNumber FileOrDirectory ---> SET PERMISSION WITH NUMERICALLY (4210)
+PERM    sudo chown UserName FileOrDirectory
+PERM    sudo chown UserName: UserName FileOrDirectory
+PERM    sudo chown UserName: FileOrDirectory (in the same previuos cli)
+PERM    sudo chown -R NewOwner:NewGroup PathOfDirectoryOrFile ---> CHANGE OWN FOR FILE AND DIRECTORY
+
+---- RESOURCE & INFO ----
+REIN    free ---> RAM
+REIN    parted ---> PARTITION
+REIN    df ---> STORAGE
+REIN    uptime ---> CPU
+REIN    uname -a ---> LINUX KERNEL & SYSTEM ARCHITECTURE
+REIN    lsb_release -a ---> LINUX DISTRIBUTION & RELEASE
+REIN    /etc/os-release ---> FILE LINUX DISTRIBUTION & RELEASE
+REIN    hostnamectl ---> SYSTEM HOSTNAME & RELATED SETTINGS
+REIN    lscpu --->  INFORMATION & ARCHITECTURE ABOUT CPU
+REIN    sudo lshw ---> LIST HARDWARE
+REIN    lspci ---> LIST PCI
+REIN    lsusb ---> LIST USB
+REIN    sudo dmidecode ---> DETAILED INFORMATION HARDWARE
+
+---- NETWORKING ----
+NETW    nmcli --->
+NETW    nmtui --->
+NETW    ip addr --->
+NETW    ifconfig --->
+NETW    netstat -tulpn ---> CHECK NETWORK & LISTENING PORTS
+NETW    scp PathOfFilesOrFolders HostName@IP:/Path ---> SEND
+NETW    scp HostName@IP:PathOfFilesOrFolders /Path ---> REVERSE
+NETW    ssh-key -t ed25519 -C "OptionName" ---> CREATE SSH KEY
+NETW    ssh-copy-id -i ~/.ssh/PublicKey.pub UserName@Ip  --->
+NETW    ssh -i ~/.ssh/PrivateKey UserName@Ip --->
+    
+NETW    SET CONNECT TO SERVER WITHOUT PASSWORD
+NETW    ssh-keygen ---> GENERATE SSH KEY PAIR (IF NOT ALREADY DONE)
+NETW    ssh-copy-id UserName@ip ---> COPY PUBLIC KEY TO REMOTE SERVER
+NETW    chmod 700 ~/.ssh
+NETW    chmod 600 ~/.ssh/authorized_keys
+    
+NETW    DNS (DOMAIN NAME SERVER)
+NETW    /etc/resolv.conf ---> FILE WITH SYMBOL LINK
+NETW    /run/systemd/resolve ---> ROOT DIRECTORY (DEPEN DISTRO)
+NETW    resolvectl status ---> DISPLAY THE CURRENT DNS
+
+---- USER & GROUP ----
+USGR    USER STRUCTURE: UserName:Password(at /etc/shadow):UID:GID:UserInfo(opt):HomeDirectory:DefaultShell
+USGR    /etc/passwd     /etc/group      /etc/shadow ---> FILES ENCRYPT PASSWORD OF USERS
+USGR    sudo /etc/sudoers ---> THIS FILE IS IMPORTANT, BE CAREFUL WHEN YOU WORK WITH THIS FILE, DON'T LOCK YOURSELF IN. USE CLI sudo visudo FOR SAFER MANIPULATION OF FILES
+USGR    groups ---> LIST GROUP RELATED TO USER
+USGR    groups UserName ---> LIST GROUP RELATED TO USER
+USGR    sudo useradd UserName ---> CREATING USER
+USGR    sudo useradd -r UserNameSystem ---> CREATE SYSTEM USER
+USGR    sudo su UserName ---> SWITCH TO USER
+USGR    sudo su - UserName ---> SWITCH TO USER
+USGR    sudo userdel -r UserName ---> REMOVING USER INCLUDE DIRECTORY OF USER WITH FLAG -r
+USGR    passwd UserName ---> CHANGE, UPDATE PASSWORD USER
+USGR    sudo groupadd GroupName ---> CREATE GROUP
+USGR    sudo usermod -aG UserName GroupName ---> ADDING USER
+USGR    sudo gpasswd -d UserName GroupName ---> DELETING USER
+USGR    sudo groupdel GroupName ---> DELETING GROUP
+USGR    sudo groupadd -g OptPid GroupName ---> CREATE GROUP WITH PID SPEC
+
+USGR    sudo EDITOR=vim visudo --->
+USGR    %sudo ALL=(ALL:ALL) ALL
+USGR    - %sudo: This specifies the group to which the rule applies. In this case, it's the sudo group.
+USGR    - ALL: This indicates the host or hosts to which the rule applies. ALL means that the rule applies to any host.
+USGR    - (ALL:ALL): This part specifies which users and terminals the members of the sudo group are allowed to impersonate. The format is (RunAsUser:RunAsGroup) RunInTerminals.
+USGR        + ALL:ALL This allows members of the sudo group to run commands as any user and any group.
+USGR    - ALL: This specifies the command the user can run. ALL means that the rule applies to any command.
+USGR    ---> It's important to be cautious when editing the sudoers file, as incorrect configurations can lead to security vulnerabilities or unintended behavior. Always use the visudo command to edit the sudoers file to ensure proper syntax and validation.
+
+---- SYSTEMD ----
+SYSD    journalctl -fu ServiceName ---> VIEW LOG REAL TIME
+SYSD    journalctl -p err -u ServiceName ---> PRIORITY SHOW ERROR LOG
+SYSD    journalctl --help
+
+---- STREAM ----
+STRE    find PathOfDirectory -name "*.extension" 1> PathOfFile --->
+STRE    find PathOfDirectory -name "*.extension" 2> PathOfFile --->
+STRE    cat File | sort | uniq ---> READ, SORT WITH ALPHABETICAL ORDER & THEN REMOVE ANY DUPLICATE LINES
+STRE    cat File | grep -v .extension ---> REMOVE .extension FILES IN CLI OF OUTPUT
+STRE    cat File | grep -v .conf >> NewFile ---> OUTPUT REDIRECTION
+
+---- PROCESS ----
+PROC    kill --->
+PROC    kill PidNumber
+PROC    kill -SignalNumber PidNumber
+PROC    killall --->
+PROC    man 7 signal --->
+
+---- TIPS & OTHER ----
+TIOT    !NumberOfCli ---> RE-RUN CLI IN CLI HISTORY
+TIOT    SpaceCli ---> RUN CLI WITH INCOGNITO (DEPENDENCE DISTRO)
+TIOT    !! ---> RUN LAST CLI
+TIOT    du -sh FileOrDirectory --->
+TIOT    cat /etc/hosts ---> VIEW ALL HOSTNAME EXISTING ON THE DEVICE
+TIOT    sudo vim /etc/hostname ---> THEN EDIT HOSTNAME AS REQUIRED
+TIOT    sudo hostname YourHostName ---> SET OR RESET HOST NAME
+TIOT    mv *.extension PathToPaste --->
+TIOT    sudo ln -s PathOfFile PathOfDirectory ---> SET SYMBOLIC LINK
+TIOT    sudo rm LinkName ---> REMOVE SYMBOLIC LINK
+
+---- PACKAGEMANAMENT ----
+dpkg --get-selections ---> PACKAGES INSTALLED BY USER
+
+dnf list installed ---> PACKAGES INSTALLED BY USER
+
+yum list installed ---> PACKAGES INSTALLED BY USER

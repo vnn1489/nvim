@@ -1,13 +1,5 @@
-# /etc/skel/.bashrc OR /home/UserName/.bashrc
-
-# <--- MY ALIASES --->
-# COMMON
-alias sp='systemctl suspend -i'
-alias sn='systemctl poweroff -i'
-alias rb='systemctl reboot -i'
-alias ...='cd ../../../'
-alias ....='../../../../'
-alias reload='source ~/.bashrc'
+# /etc/skel/.bashrc ---> FOR ALL USER
+# /home/UserName/.bashrc ---> FOR EACH SPECIFIC USER
 
 # COMPRESSION & DECOMPRESSION
 alias extract='tar -xvf'
@@ -66,8 +58,16 @@ alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 alias svim='sudo vim'
 alias snano='sudo nano'
 alias pt3='python3'
-alias tmuxls='tmux list-sections'
-alias tmuxks='tmux-session -t'
-alias tmuxkas='tmux kill-session -a'
-alias vim='flatpak run org.vim.Vim'
+alias tmux-ls='tmux list-sections'
+alias tmux-ks='tmux-session -t'
+alias tmux-kas='tmux kill-session -a'
+alias fvim='flatpak run org.vim.Vim'
 alias commit='git commit -m "`date +%Y%m%d_%H%M`"'
+
+# OTHER
+alias sp='systemctl suspend -i'
+alias sn='systemctl poweroff -i'
+alias rb='systemctl reboot -i'
+alias ...='cd ../../../'
+alias ....='../../../../'
+alias reload='source ~/.bashrc'
