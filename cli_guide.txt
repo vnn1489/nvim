@@ -46,7 +46,7 @@ NETW    ssh -i ~/.ssh/PrivateKey UserName@Ip --->
     
 NETW    SET CONNECT TO SERVER WITHOUT PASSWORD
 NETW    ssh-keygen ---> GENERATE SSH KEY PAIR (IF NOT ALREADY DONE)
-NETW    ssh-copy-id UserName@ip ---> COPY PUBLIC KEY TO REMOTE SERVER
+NETW    ssh-copy-id UserName@ip ---> COPY PUBLIC KEY TO SERVER WITHOUT GEN SSH KEY (????: IS WHERE SAVE SSH KEY)
 NETW    chmod 700 ~/.ssh
 NETW    chmod 600 ~/.ssh/authorized_keys
     
