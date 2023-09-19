@@ -113,9 +113,13 @@ TIOT    mv *.extension PathToPaste --->
 TIOT    sudo ln -s PathOfFile PathOfDirectory ---> SET SYMBOLIC LINK
 TIOT    sudo rm LinkName ---> REMOVE SYMBOLIC LINK
 
----- PACKAGEMANAMENT ----
+---- PACKAGE MANAMENT ----
 dpkg --get-selections ---> PACKAGES INSTALLED BY USER
 
 dnf list installed ---> PACKAGES INSTALLED BY USER
 
 yum list installed ---> PACKAGES INSTALLED BY USER
+
+---- CHECKSUM ----
+KÉT QUẢ CHECKSUM LÀ GIỐNG NHAU NẾU CÁC FILE HOẶC CÁC DIRECTORY ĐỀU ĐƯỢC GIẢI NÉN TỪ 1 BẢN ZIP ĐƯỢC TẠO RA TẠI 1 THỜI ĐIỂM NHẤT ĐỊNH
+find PathOfDirectory -type f -exec sha256sum {} + | sha256sum
