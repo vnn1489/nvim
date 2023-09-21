@@ -138,3 +138,14 @@ GIT    HANDLE CONFLIG
 GIT    git fetch origin BranchName
 GIT    git rebase origin/BranchName
 GIT    git push -f origin BranchName
+
+---- PYTHON ----
+PYTH    pip install PackageName
+PYTH    pip install --upgrade PackageName
+
+PYTH    SETUP VIRTUAL ENVIRONMENTS
+PYTH    apt-i python3-venv
+PYTH    cd YourDirectoryProject
+PYTH    sudo python3 -m venv SetNameVenv
+PYTH    source NameVenv/bin/activate
+PYTH    deactivate ---> EXIT VENV
