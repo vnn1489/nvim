@@ -59,19 +59,27 @@ NETW    resolvectl status ---> DISPLAY THE CURRENT DNS
 USGR    USER STRUCTURE: UserName:Password(at /etc/shadow):UID:GID:UserInfo(opt):HomeDirectory:DefaultShell
 USGR    /etc/passwd     /etc/group      /etc/shadow ---> FILES ENCRYPT PASSWORD OF USERS
 USGR    sudo /etc/sudoers ---> THIS FILE IS IMPORTANT, BE CAREFUL WHEN YOU WORK WITH THIS FILE, DON'T LOCK YOURSELF IN. USE CLI sudo visudo FOR SAFER MANIPULATION OF FILES
-USGR    groups ---> LIST GROUP RELATED TO USER
-USGR    groups UserName ---> LIST GROUP RELATED TO USER
 USGR    sudo useradd UserName ---> CREATING USER
 USGR    sudo useradd -r UserNameSystem ---> CREATE SYSTEM USER
 USGR    sudo su UserName ---> SWITCH TO USER
 USGR    sudo su - UserName ---> SWITCH TO USER
 USGR    sudo userdel -r UserName ---> REMOVING USER INCLUDE DIRECTORY OF USER WITH FLAG -r
 USGR    passwd UserName ---> CHANGE, UPDATE PASSWORD USER
-USGR    sudo groupadd GroupName ---> CREATE GROUP
 USGR    sudo usermod -aG UserName GroupName ---> ADDING USER
 USGR    sudo gpasswd -d UserName GroupName ---> DELETING USER
+
+USGR    CHANGE USERNAME
+USGR    sudo usermod -l NewUserName OldUserName
+USGR    sudo usermod -m -d /home/NewUserName OldUserName
+USGR    sudo groupmod -n NewUserName OldUserName
+USGR    sudo userdel oldusername
+
+USGR    GROUP
 USGR    sudo groupdel GroupName ---> DELETING GROUP
+USGR    sudo groupadd GroupName ---> CREATE GROUP
+USGR    groups ---> LIST GROUP RELATED TO USER
 USGR    sudo groupadd -g OptPid GroupName ---> CREATE GROUP WITH PID SPEC
+USGR    groups UserName ---> LIST GROUP RELATED TO USER
 
 USGR    sudo EDITOR=vim visudo --->
 USGR    %sudo ALL=(ALL:ALL) ALL
