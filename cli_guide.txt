@@ -135,6 +135,6 @@ GIT    git fetch --all
 GIT    git pull --all
 
 GIT    HANDLE CONFLIG
-GIT    git fetch origin bash
-GIT    git rebase origin/bash
-GIT    git push -f origin bash
+GIT    git fetch origin BranchName
+GIT    git rebase origin/BranchName
+GIT    git push -f origin BranchName
