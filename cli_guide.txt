@@ -128,6 +128,8 @@ dnf list installed ---> PACKAGES INSTALLED BY USER
 
 yum list installed ---> PACKAGES INSTALLED BY USER
 
+APT    /var/log/apt ---> HISTORY INSTALLED APT PACKAGES
+
 ---- CHECKSUM ----
 KÉT QUẢ CHECKSUM LÀ GIỐNG NHAU NẾU CÁC FILE HOẶC CÁC DIRECTORY ĐỀU ĐƯỢC GIẢI NÉN TỪ 1 BẢN ZIP ĐƯỢC TẠO RA TẠI 1 THỜI ĐIỂM NHẤT ĐỊNH
 find PathOfDirectory -type f -exec sha256sum {} + | sha256sum
