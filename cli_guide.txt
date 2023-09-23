@@ -159,3 +159,6 @@ PYTH    cd YourDirectoryProject
 PYTH    sudo python3 -m venv SetNameVenv
 PYTH    source NameVenv/bin/activate
 PYTH    deactivate ---> EXIT VENV
+
+COPY    cp -n -v SourceFile DestinationDirectory ---> DEAL WITH DUPLICATE
+COPY    cp -i SourceFile DestinationDirectory ---> INTERACTIVELY COPY
