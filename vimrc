@@ -1,3 +1,5 @@
+" FORMAT FILE CONFIG: .vimrc
+
 " set compatibility to vim only
 set nocompatible
 
