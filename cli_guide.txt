@@ -155,6 +155,9 @@ PYTH    pip install --upgrade PackageName
 PYTH    pip freeze > requirements.txt
 PYTH    pip install -r requirements.txt
 PYTH    
+PYTH    
+PYTH    
+PYTH    
 
 PYTH    SETUP VIRTUAL ENVIRONMENTS
 PYTH    apt-i python3-venv
