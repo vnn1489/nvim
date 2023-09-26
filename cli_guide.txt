@@ -139,6 +139,16 @@ GIT    ~/.gitconfig ---> FILE CONFIG
 GIT    git config --list ---> CHECK CREDENTIAL
 GIT    git push origin  --delete BranchName ---> DELETE BRANCH ON REPOSITORY FORM LOCAL
 
+GIT    CREATE A BRANCH FROM AN EXISTING BRANCH
+GIT    git checkout ExistingBranch
+GIT    git branch NewBranch
+GIT    git checkout -b NewBranch ExistingBranch ---> SHORTER WAY FOR 2 CLI ABOVE
+
+GIT    CREATE AN INDEPENDENT BRANCH
+GIT    git checkout main
+GIT    git branch NewBranch
+GIT    git checkout -b NewBranch ---> SHORTER WAY FOR 2 CLI ABOVE
+
 GIT    PULL ALL BRANCH
 GIT    git branch -r | grep -v '\->' | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
 GIT    git fetch --all
