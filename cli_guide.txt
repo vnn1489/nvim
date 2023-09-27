@@ -164,10 +164,6 @@ PYTH    pip install PackageName
 PYTH    pip install --upgrade PackageName
 PYTH    pip freeze > requirements.txt
 PYTH    pip install -r requirements.txt
-PYTH    
-PYTH    
-PYTH    
-PYTH    
 
 PYTH    SETUP VIRTUAL ENVIRONMENTS
 PYTH    apt-i python3-venv
@@ -178,3 +174,12 @@ PYTH    deactivate ---> EXIT VENV
 
 COPY    cp -n -v SourceFile DestinationDirectory ---> DEAL WITH DUPLICATE
 COPY    cp -i SourceFile DestinationDirectory ---> INTERACTIVELY COPY
+
+---- NGINX ----
+NGIN   ps -C nginx -f ---> LIST ALL MASTER & WORKER PROCESS
+NGIN   nginx -s reload ---> GRACEFULLY RELOAD WITHOUT STOPPING THE SERVER OR DROPPING ANY ACTIVE CONNECTIONS
+NGIN   nginx -v ---> PROVIDES A QUICK WAY TO CHECK THE NGINX VERSION
+NGIN   nginx -V ---> PROVIDES DETAILED INFORMATION ABOUT THE NGINX INSTALLATION, INCLUDING COMPILE-TIME OPTIONS AND MODULE DETAILS
+NGIN   nginx -t ---> USED FOR SYNTAX CHECKING AND ERROR DETECTION IN YOUR CONFIGURATION FILES
+NGIN   nginx -T ---> USED TO DISPLAY THE COMPILED AND EFFECTIVE CONFIGURATION THAT NGINX WILL USE
+NGIN   nginx -s AllSignal ---> AllSignal (stop, quit, reload, reopen, upgrade)
