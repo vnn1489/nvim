@@ -5,32 +5,47 @@
 alias extract='tar -xvf'
 
 # FLATPAK
-alias flatpak-i='flatpak install flathub -y'
-alias flatpak-u='flatpak uninstall --delete-data -y'
-alias flatpak-l='flatpak list'
+alias flatpak-i4='flatpak install --from' # WITH https 
+alias flatpak-i7='flatpak install flathub -y' # FOR ONLINE
+alias flatpak-i='flatpak install' # FOR OFFLINE WITH FORMAT <ApplicationID>.flatpakref
 alias flatpak-r='flatpak run'
+alias flatpak-udd='flatpak uninstall --delete-data -y'
+alias flatpak-uu='flatpak uninstall --unused'
+alias flatpak-l='flatpak list'
+alias flatpak-s='flatpak search'
+alias flatpak-u='flatpak update -y'
+alias flatpak-uv='flatpak update -v' # TO FIX LIKE THIS error: runtime/org.freedesktop.Platform/x86_64/1.6 not installed
 
 # SNAP
 alias snap-i='sudo snap install'
-alias snap-u='sudo snap remove'
-alias snap-l='snap list --all'
+alias snap-rm='sudo snap remove'
+alias snap-la='snap list --all'
+alias snap-f='snap find'
+alias snap-c='snap changes'
+alias snap-rf='sudo snap refresh' # UPDATE ALL OR ONLY <package>
+alias snap-rl='sudo snap refresh --list' # LIST UPDATE TO VIEW
+alias snap-rv='sudo snap revert' # <package>
+alias snap-='sudo snap refresh' # <package> --channel=<channel_name>
+
+# INSTALL SNAP APPS OFFLINE
+alias snap-d='snap download' # <package_name>
+alias snap-a='snap ack' # <package_name.assert>
+alias snap-i='sudo snap install' # <package_name.snap>
 
 # APT
 alias apt-uu='sudo apt update && sudo apt upgrade -y'
 alias apt-udu='sudo apt update && sudo apt dist-upgrade -y'
 alias apt-s='apt search'
-alias apt-sp='apt-cache pkgnames'
-alias apt-pd='apt show -a package'
+alias apt-cp='apt-cache pkgnames'
 alias apt-i='sudo apt install -y'
-alias apt-l='apt list --installed'
+alias apt-li='apt list --installed'
 alias apt-r='sudo apt remove -y' # REMOVE APP BUT KEEP CONFIG
 alias apt-p='sudo apt purge -y' # DELETE CONFIG WHEN REMOVE APP
-alias apt-ar='sudo apt autoremove -y' # REMOVE DEOENDENCIES OF APPS WAS REMOVE
+alias apt-ar='sudo apt autoremove -y' # REMOVE DEPENDENCIES OF APPS WAS REMOVE
 alias apt-fu='sudo apt full-upgrade -y'
 alias apt-inu='sudo apt install CreateVariableToEnterPackageName --no-upgrade' # su dung bien
 alias apt-ispec='sudo apt install PackageName=VersionNumber' # su dung bien
 alias apt-lu='apt list --upgradable'
-alias apt-li='apt list --installed'
 alias apt-lav='apt list --all-versions'
 
 # YUM
@@ -61,7 +76,6 @@ alias pt3='python3'
 alias tmux-ls='tmux list-sections'
 alias tmux-ks='tmux-session -t'
 alias tmux-kas='tmux kill-session -a'
-alias fvim='flatpak run org.vim.Vim'
 alias commit='git commit -m "`date +%Y%m%d_%H%M`"'
 
 # OTHER

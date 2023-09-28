@@ -122,8 +122,6 @@ TIOT    sudo ln -s PathOfFile PathOfDirectory ---> SET SYMBOLIC LINK
 TIOT    sudo rm LinkName ---> REMOVE SYMBOLIC LINK
 
 ---- PACKAGE MANAMENT ----
-dpkg --get-selections ---> PACKAGES INSTALLED BY USER
-
 dnf list installed ---> PACKAGES INSTALLED BY USER
 
 yum list installed ---> PACKAGES INSTALLED BY USER
