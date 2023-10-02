@@ -17,6 +17,13 @@ PERM    sudo chown UserName: UserName FileOrDirectory
 PERM    sudo chown UserName: FileOrDirectory (in the same previuos cli)
 PERM    sudo chown -R NewOwner:NewGroup PathOfDirectoryOrFile ---> CHANGE OWN FOR FILE AND DIRECTORY
 
+---- TIME ----
+TIME    date -u "+%Y-%m-%d %H:%M:%S UTC" ---> GET UTC TIME
+TIME    
+TIME    
+TIME    
+
+
 ---- RESOURCE & INFO ----
 REIN    free ---> RAM
 REIN    parted ---> PARTITION
