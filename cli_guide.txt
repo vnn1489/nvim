@@ -139,7 +139,7 @@ APT    /var/log/apt ---> HISTORY INSTALLED APT PACKAGES
 KÉT QUẢ CHECKSUM LÀ GIỐNG NHAU NẾU CÁC FILE HOẶC CÁC DIRECTORY ĐỀU ĐƯỢC GIẢI NÉN TỪ 1 BẢN ZIP ĐƯỢC TẠO RA TẠI 1 THỜI ĐIỂM NHẤT ĐỊNH
 find PathOfDirectory -type f -exec sha256sum {} + | sha256sum
 
----- GIT ----
+GIT    https://vnn1489.notion.site/git-e7d33c3f6c95412e8da64bd56ca10b2d?pvs=4
 GIT    ~/.gitconfig ---> FILE CONFIG
 GIT    git config --list ---> CHECK CREDENTIAL
 GIT    git push origin  --delete BranchName ---> DELETE BRANCH ON REPOSITORY FORM LOCAL
