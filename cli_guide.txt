@@ -1,9 +1,8 @@
----- PERMISSION ----
+PERM    ---- PERMISSION ----
 PERM    type    rwx     rwx     rwx
 PERM    d, l    421     421     421
 PERM    d, l    user    group   other
 PERM    0(---)  1(--x)  2(-w-)  3(-wx)  4(r--)  5(r-x)  6(rw-)  7(rwx)
-PERM    
 PERM    USE FLAG chmod -R TO SET PERMISSION WITH RECURSIVE FOR DIRECTORY
 PERM    chmod u±rwx FileOrDirectory ---> FOR SPECIFIC USER
 PERM    chmod a±rwx FileOrDirectory ---> FOR ALL USER
@@ -17,14 +16,16 @@ PERM    sudo chown UserName: UserName FileOrDirectory
 PERM    sudo chown UserName: FileOrDirectory (in the same previuos cli)
 PERM    sudo chown -R NewOwner:NewGroup PathOfDirectoryOrFile ---> CHANGE OWN FOR FILE AND DIRECTORY
 
----- TIME ----
+
+
+
+TIME    ---- TIME ----
 TIME    date -u "+%Y-%m-%d %H:%M:%S UTC" ---> GET UTC TIME
-TIME    
-TIME    
-TIME    
 
 
----- RESOURCE & INFO ----
+
+
+REIN    ---- RESOURCE & INFO ----
 REIN    free ---> RAM
 REIN    parted ---> PARTITION
 REIN    df ---> STORAGE
@@ -39,7 +40,10 @@ REIN    lspci ---> LIST PCI
 REIN    lsusb ---> LIST USB
 REIN    sudo dmidecode ---> DETAILED INFORMATION HARDWARE
 
----- NETWORKING ----
+
+
+
+NETW    ---- NETWORKING ----
 NETW    nmcli --->
 NETW    nmtui --->
 NETW    ip addr --->
@@ -50,19 +54,22 @@ NETW    scp HostName@IP:PathOfFilesOrFolders /Path ---> REVERSE
 NETW    ssh-key -t ed25519 -C "OptionName" ---> CREATE SSH KEY
 NETW    ssh-copy-id -i ~/.ssh/PublicKey.pub UserName@Ip  --->
 NETW    ssh -i ~/.ssh/PrivateKey UserName@Ip --->
-    
+
 NETW    SET CONNECT TO SERVER WITHOUT PASSWORD
 NETW    ssh-keygen ---> GENERATE SSH KEY PAIR (IF NOT ALREADY DONE)
 NETW    ssh-copy-id UserName@ip ---> COPY PUBLIC KEY TO SERVER WITHOUT GEN SSH KEY (????: IS WHERE SAVE SSH KEY)
 NETW    chmod 700 ~/.ssh
 NETW    chmod 600 ~/.ssh/authorized_keys
-    
+
 NETW    DNS (DOMAIN NAME SERVER)
 NETW    /etc/resolv.conf ---> FILE WITH SYMBOL LINK
 NETW    /run/systemd/resolve ---> ROOT DIRECTORY (DEPEN DISTRO)
 NETW    resolvectl status ---> DISPLAY THE CURRENT DNS
 
----- USER & GROUP ----
+
+
+
+USGR    ---- USER & GROUP ----
 USGR    USER STRUCTURE: UserName:Password(at /etc/shadow):UID:GID:UserInfo(opt):HomeDirectory:DefaultShell
 USGR    /etc/passwd     /etc/group      /etc/shadow ---> FILES ENCRYPT PASSWORD OF USERS
 USGR    sudo /etc/sudoers ---> THIS FILE IS IMPORTANT, BE CAREFUL WHEN YOU WORK WITH THIS FILE, DON'T LOCK YOURSELF IN. USE CLI sudo visudo FOR SAFER MANIPULATION OF FILES
@@ -88,6 +95,7 @@ USGR    groups ---> LIST GROUP RELATED TO USER
 USGR    sudo groupadd -g OptPid GroupName ---> CREATE GROUP WITH PID SPEC
 USGR    groups UserName ---> LIST GROUP RELATED TO USER
 
+USGR    CONTROLS WHO IS ALLOWED TO RUN ADMINISTRATIVE COMMANDS WITH SUDO
 USGR    sudo EDITOR=vim visudo --->
 USGR    %sudo ALL=(ALL:ALL) ALL
 USGR    - %sudo: This specifies the group to which the rule applies. In this case, it's the sudo group.
@@ -97,26 +105,38 @@ USGR        + ALL:ALL This allows members of the sudo group to run commands as a
 USGR    - ALL: This specifies the command the user can run. ALL means that the rule applies to any command.
 USGR    ---> It's important to be cautious when editing the sudoers file, as incorrect configurations can lead to security vulnerabilities or unintended behavior. Always use the visudo command to edit the sudoers file to ensure proper syntax and validation.
 
----- SYSTEMD ----
+
+
+
+SYSD    ---- SYSTEMD ----
 SYSD    journalctl -fu ServiceName ---> VIEW LOG REAL TIME
 SYSD    journalctl -p err -u ServiceName ---> PRIORITY SHOW ERROR LOG
 SYSD    journalctl --help
 
----- STREAM ----
+
+
+
+STRE    ---- STREAM ----
 STRE    find PathOfDirectory -name "*.extension" 1> PathOfFile --->
 STRE    find PathOfDirectory -name "*.extension" 2> PathOfFile --->
 STRE    cat File | sort | uniq ---> READ, SORT WITH ALPHABETICAL ORDER & THEN REMOVE ANY DUPLICATE LINES
 STRE    cat File | grep -v .extension ---> REMOVE .extension FILES IN CLI OF OUTPUT
 STRE    cat File | grep -v .conf >> NewFile ---> OUTPUT REDIRECTION
 
----- PROCESS ----
+
+
+
+PROC    ---- PROCESS ----
 PROC    kill --->
 PROC    kill PidNumber
 PROC    kill -SignalNumber PidNumber
 PROC    killall --->
 PROC    man 7 signal --->
 
----- TIPS & OTHER ----
+
+
+
+TIOT    ---- TIPS & OTHER ----
 TIOT    !NumberOfCli ---> RE-RUN CLI IN CLI HISTORY
 TIOT    SpaceCli ---> RUN CLI WITH INCOGNITO (DEPENDENCE DISTRO)
 TIOT    !! ---> RUN LAST CLI
@@ -128,17 +148,25 @@ TIOT    mv *.extension PathToPaste --->
 TIOT    sudo ln -s PathOfFile PathOfDirectory ---> SET SYMBOLIC LINK
 TIOT    sudo rm LinkName ---> REMOVE SYMBOLIC LINK
 
----- PACKAGE MANAMENT ----
-dnf list installed ---> PACKAGES INSTALLED BY USER
 
-yum list installed ---> PACKAGES INSTALLED BY USER
 
-APT    /var/log/apt ---> HISTORY INSTALLED APT PACKAGES
 
----- CHECKSUM ----
-KÉT QUẢ CHECKSUM LÀ GIỐNG NHAU NẾU CÁC FILE HOẶC CÁC DIRECTORY ĐỀU ĐƯỢC GIẢI NÉN TỪ 1 BẢN ZIP ĐƯỢC TẠO RA TẠI 1 THỜI ĐIỂM NHẤT ĐỊNH
-find PathOfDirectory -type f -exec sha256sum {} + | sha256sum
+PACK    ---- PACKAGE MANAMENT ----
+PACK    dnf list installed ---> PACKAGES INSTALLED BY USER
+PACK    yum list installed ---> PACKAGES INSTALLED BY USER
+PACK    /var/log/apt ---> HISTORY INSTALLED APT PACKAGES
 
+
+
+
+CHEC    ---- CHECKSUM ----
+CHEC    KÉT QUẢ CHECKSUM LÀ GIỐNG NHAU NẾU CÁC FILE HOẶC CÁC DIRECTORY ĐỀU ĐƯỢC GIẢI NÉN TỪ 1 BẢN ZIP ĐƯỢC TẠO RA TẠI 1 THỜI ĐIỂM NHẤT ĐỊNH
+CHEC    find PathOfDirectory -type f -exec sha256sum {} + | sha256sum
+
+
+
+
+GIT    ---- GIT ----
 GIT    https://vnn1489.notion.site/git-e7d33c3f6c95412e8da64bd56ca10b2d?pvs=4
 GIT    ~/.gitconfig ---> FILE CONFIG
 GIT    git config --list ---> CHECK CREDENTIAL
@@ -164,7 +192,10 @@ GIT    git fetch origin BranchName
 GIT    git rebase origin/BranchName
 GIT    git push -f origin BranchName
 
----- PYTHON ----
+
+
+
+PYTH    ---- PYTHON ----
 PYTH    pip install PackageName
 PYTH    pip install --upgrade PackageName
 PYTH    pip freeze > requirements.txt
@@ -174,13 +205,20 @@ PYTH    SETUP VIRTUAL ENVIRONMENTS
 PYTH    apt-i python3-venv
 PYTH    cd YourDirectoryProject
 PYTH    sudo python3 -m venv SetNameVenv
-PYTH    source NameVenv/bin/activate
+PYTH    source NameVenv/bin/activate ---> ACTIVE ENVIRONMENT
 PYTH    deactivate ---> EXIT VENV
 
-COPY    cp -n -v SourceFile DestinationDirectory ---> DEAL WITH DUPLICATE
-COPY    cp -i SourceFile DestinationDirectory ---> INTERACTIVELY COPY
 
----- NGINX ----
+
+
+FIDI    ---- FILES & DIRECTOIES ----
+FIDI    cp -n -v SourceFile DestinationDirectory ---> DEAL WITH DUPLICATE
+FIDI    cp -i SourceFile DestinationDirectory ---> INTERACTIVELY COPY
+
+
+
+
+NGIN   ---- NGINX ----
 NGIN   ps -C nginx -f ---> LIST ALL MASTER & WORKER PROCESS
 NGIN   nginx -s reload ---> GRACEFULLY RELOAD WITHOUT STOPPING THE SERVER OR DROPPING ANY ACTIVE CONNECTIONS
 NGIN   nginx -v ---> PROVIDES A QUICK WAY TO CHECK THE NGINX VERSION
@@ -189,9 +227,7 @@ NGIN   nginx -t ---> USED FOR SYNTAX CHECKING AND ERROR DETECTION IN YOUR CONFIG
 NGIN   nginx -T ---> USED TO DISPLAY THE COMPILED AND EFFECTIVE CONFIGURATION THAT NGINX WILL USE
 NGIN   nginx -s AllSignal ---> AllSignal (stop, quit, reload, reopen, upgrade)
 
----- BD ----
-DB  ctrl + l ---> TO CLEANUP TERMINAL
-DB  
-DB  
-DB  
-DB  
+
+
+
+DB    ---- DATABASE ----
