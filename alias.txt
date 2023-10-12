@@ -77,7 +77,7 @@ alias tmux-ls='tmux list-sections'
 alias tmux-ks='tmux-session -t'
 alias tmux-kas='tmux kill-session -a'
 alias commit='git commit -m "`date -u "+%Y%m%d_%H%M_UTC"`"'
-alias time-utc = 'date -u "+%Y%m%d_%H%M_UTC"'
+alias time-utc='date -u "+%Y%m%d_%H%M_UTC"'
 
 # OTHER
 alias sp='systemctl suspend -i'
