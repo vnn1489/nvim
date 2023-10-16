@@ -38,7 +38,10 @@ REIN    lscpu --->  INFORMATION & ARCHITECTURE ABOUT CPU
 REIN    sudo lshw ---> LIST HARDWARE
 REIN    lspci ---> LIST PCI
 REIN    lsusb ---> LIST USB
+REIN    usb-devices ---> LIST DEVICES & DETAIL INFO USB
 REIN    sudo dmidecode ---> DETAILED INFORMATION HARDWARE
+REIN    sudo blkid ---> ????: RE-SEARCH MEANNING CONTENT OUTPUT OF THIS CLI
+REIN    sudo fdisk -l ---> ????: RE-SEARCH MEANNING CONTENT OUTPUT OF THIS CLI
 
 
 
