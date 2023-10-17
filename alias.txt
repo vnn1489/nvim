@@ -80,6 +80,7 @@ alias commit='git commit -m "`date -u "+%Y%m%d_%H%M_UTC"`"'
 alias time-utc='date -u "+%Y%m%d_%H%M_UTC"'
 
 # OTHER
+alias s='sudo'
 alias sp='systemctl suspend -i'
 alias sn='systemctl poweroff -i'
 alias rb='systemctl reboot -i'
