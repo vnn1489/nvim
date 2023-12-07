@@ -1,3 +1,10 @@
+" file format for vim: .vimrc
+" location for vim: /home/UaerName
+
+" file format for neovim: init.vim
+" location for neovim: /home/UserName/.config/nvim
+" plugin for neovim: https://dotfyle.com/
+
 " set compatibility to vim only
 set nocompatible
 
@@ -19,7 +26,10 @@ set list
 set foldmethod=syntax
 set foldnestmax=1
 set foldlevelstart=0
+
 set number              " Show line number
+"set nonumber           " Hide line number
+
 set ignorecase          " Enable case-sensitive 
 
 " Disable backup
