@@ -11,6 +11,8 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # INSERT BELLOW CONTENT INTO FILE /home/UserName/.config/nvim/init.vim
 
+
+
 call plug#Begin()
     " Color Scheme
     Plug 'EdenEast/nightfox.nvim'
@@ -21,3 +23,25 @@ call plug#end()
 # HOW TO AUTO RUN :PlugInstall INSIDE NEOVIM. IF CAN NOT RUN IT INSIDE NEOVIM, SHOW MESSAGE FOR USER TO RUN MANUAL FOR COMMAND :PlugInstall INSIDE NEOVIM
 
 # EIXT NEOVIM & RE-RUN NEOVIM
+
+--------------------------------------------------------------
+# TOTUARIAL OF VU NGUYEN CODER
+
+# INSTALL GIT, NODEJS, PYTHON
+
+# INSTALL PROVIDER (npm, pip)
+npm install neovim -g
+pip install pynvim
+
+# AFTER INSTALLED, GO TO INSIDE NEOVIM AND CHECK WITH COMMAND :checkhealth
+
+# INSTALL vim plug
+
+# EDIT CONTENT INSIDE FILE CONFIG
+call plug#Begin('PathGoToPlugged')
+    Plug 'EdenEast/nightfox.nvim' " Color Scheme
+call plug#end()
+
+# GO TO INSIDE NEOVIM & RUN COMMAND :PlugInstall TO INSTALL PLUGIN
+
+# GO TO INSIDE VIM CONFIG FILE >>>> DELETE OR COMMENT NAME CONFIG PLUGGIN & GO TO INSIDE NEOVIM TO RUN COMMAND :source % AND :PlugClean TO UPDATE &: UNINSTALL PLUGIN
