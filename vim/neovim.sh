@@ -28,6 +28,7 @@ call plug#end()
 # ---- PREREQUISITES:
 
 #0 UPDATE
+sudo apt update -y
 
 #1 CHECK & INSTALL git, nodejs, python
 
