@@ -24,12 +24,14 @@ call plug#end()
 
 # EIXT NEOVIM & RE-RUN NEOVIM
 
---------------------------------------------------------------
-# TOTUARIAL OF VU NGUYEN CODER
+###############################################################################
+# ---- PREREQUISITES:
 
-# INSTALL GIT, NODEJS, PYTHON
+#0 UPDATE
 
-# INSTALL PROVIDER (npm, pip)
+#1 CHECK & INSTALL git, nodejs, python
+
+#2 INSTALL PROVIDER
 npm install neovim -g
 pip install pynvim
 
