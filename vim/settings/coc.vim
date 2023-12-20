@@ -1,4 +1,4 @@
-" GO TO INSIDE nvim & RUN COMMAND :CocInstall c
+" GO TO INSIDE nvim & RUN COMMAND :CocInstall coc-tsserver
 
 " Extensions need to be installed at first startup
 let g:coc_global_extensions = [
