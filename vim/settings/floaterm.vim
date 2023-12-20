@@ -15,35 +15,34 @@ hi FloatermBorder guifg=Orange guibg=DarkGreen
 
 autocmd User FloatermOpen        " triggered after opening a new/existed floater
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Hotkey to manage terminals
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open a new terminal 
-nnoremap <F9> 		:FloatermNew<CR>	" OPTION <silent>
-tnoremap <F9>		<C-\><C-n>:FloatermNew<CR>	" OPTION <silent>, <leader>
+nnoremap <silent> <leader>to    :FloatermNew<CR>
+tnoremap <silent> <leader>to    <C-\><C-n>:FloatermNew<CR>
 
-" Kill current terminal
-nnoremap <kt> :FloatermKill<CR>:FloatermPrev<CR>	" OPTION <silent>, <leader>
-tnoremap to tk <C-\><C-n>:FloatermKill<CR>:FloatermPrev<CR>	" OPTION <silent>, <leader>
+" Kill current terminal 
+nnoremap <silent> <leader>tk :FloatermKill<CR>:FloatermPrev<CR>
+tnoremap <silent> <leader>tk <C-\><C-n>:FloatermKill<CR>:FloatermPrev<CR>
 
 " Navigation next and previous terminal 
-nnoremap to tn :FloatermNext<CR>	" OPTION <silent>, <leader>
-tnoremap to tn <C-\><C-n>:FloatermNext<CR>	" OPTION <silent>, <leader>
-nnoremap to tp :FloatermPrev<CR>	" OPTION <silent>, <leader>
-tnoremap to tp <C-\><C-n>:FloatermPrev<CR>	" OPTION <silent>, <leader>
+nnoremap <silent> <leader>tn :FloatermNext<CR>
+tnoremap <silent> <leader>tn <C-\><C-n>:FloatermNext<CR>
+nnoremap <silent> <leader>tp :FloatermPrev<CR>
+tnoremap <silent> <leader>tp <C-\><C-n>:FloatermPrev<CR>
 
 " Toggle terminal
-nnoremap to tt :FloatermToggle<CR>	" OPTION <silent>, <leader>
-tnoremap to tt <C-\><C-n>:FloatermToggle<CR>	" OPTION <silent>, <leader>
+nnoremap <silent> <leader>tt :FloatermToggle<CR>
+tnoremap <silent> <leader>tt <C-\><C-n>:FloatermToggle<CR>
 
 " Focus terminal 
-nnoremap to tf <C-\><C-n><C-W><Left>	" OPTION <silent>, <leader>
-tnoremap to tf <C-\><C-n><C-W><Left>	" OPTION <silent>, <leader>
+nnoremap <silent> <leader>tf <C-\><C-n><C-W><Left>
+tnoremap <silent> <leader>tf <C-\><C-n><C-W><Left>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Hotkey to run other console apps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git 
-nnoremap to gl :FloatermNew! --position=bottomright --height=0.95 --width=0.7 --title='GitLog' git lg<CR>	" OPTION <silent>, <leader>
+nnoremap <silent> <leader>gl :FloatermNew! --position=bottomright --height=0.95 --width=0.7 --title='GitLog' git lg<CR>

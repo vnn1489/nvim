@@ -1,10 +1,19 @@
-" F5 to toggle 
-map <F5> :NERDTreeToggle<CR> " OPTION <silent> BEFORE <F5>
+" F5: toggle 
+map <silent> <F5> :NERDTreeToggle<CR>
 
-" Open the existing NERDTree on each new tab.
+" F1: Collapse all open folders and move the cursor to the root folder
+map <F1> :NERDTree<CR>
+
+" ????
+map <leader>n :NERDTreeFocus<CR>
+
+" ????
+"map <SetYourKey> :NERDTreeFind<CR>
+
+" Open the existing NERDTree on each new tab. ????
 "autocmd BufWinEnter * silent NERDTreeMirror
 
-" Exit Vim if NERDTree is the only window left.
+" Exit Vim if NERDTree is the only window left. ????
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Change arrow to expand/collapse tree
