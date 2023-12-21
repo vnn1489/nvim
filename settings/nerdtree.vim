@@ -1,14 +1,14 @@
-" F5: toggle 
-map <silent> <F5> :NERDTreeToggle<CR>
+" F1: open the file browser at the last place of operation
+map <F1> :NERDTreeToggle<CR>
 
-" F1: Collapse all open folders and move the cursor to the root folder
-map <F1> :NERDTree<CR>
-
-" ????
-map <leader>n :NERDTreeFocus<CR>
+" F2: open the file browser primitive & move the cursor to the root folder
+map <F2> :NERDTree<CR>
 
 " ????
-"map <SetYourKey> :NERDTreeFind<CR>
+map <F3> :NERDTreeFocus<CR>
+
+" ????
+map <F4> :NERDTreeFind<CR>
 
 " Open the existing NERDTree on each new tab. ????
 "autocmd BufWinEnter * silent NERDTreeMirror
