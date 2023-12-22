@@ -1,6 +1,6 @@
 let g:floaterm_position = 'topright'
-let g:floaterm_width = 0.6
-let g:floaterm_height = 0.8
+let g:floaterm_width = 0.4
+let g:floaterm_height = 0.6
 let g:floaterm_title = 'TERMINAL $1/$2'
 let g:floaterm_wintype = 'float'
 

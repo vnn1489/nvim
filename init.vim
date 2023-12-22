@@ -60,7 +60,17 @@ nmap <M-Up> :resize -1<CR>
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 nmap /\ :noh<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Buffers
+nnoremap <leader>w :w<CR>
+nnoremap <leader>bd :bd/tn<CR>
+nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>be :enew<CR> " FIGBUG
+nnoremap <leader>bl :ls<CR>
+nnoremap <leader>bq :bufdo bd<CR>
+nnoremap <leader>qa :qa<CR> " FIGBUG
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin list
 " (used with Vim-plug - https://github.com/junegunn/vim-plug)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -76,11 +86,15 @@ call plug#begin(stdpath('config').'/plugged')
   Plug 'jcharum/vim-nerdtree-syntax-highlight',
     \ {'branch': 'escape-keys'}
 
-" File search
-  Plug 'junegunn/fzf', 
-    \ { 'do': { -> fzf#install() } }            " Fuzzy finder 
-  Plug 'junegunn/fzf.vim'
+" File search vnn1489
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  Plug 'junegunn/fzf', 
+"    \ { 'do': { -> fzf#install() } }            " Fuzzy finder 
+"  Plug 'junegunn/fzf.vim'
 
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status bar
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
