@@ -20,7 +20,7 @@ set nobackup
 set nowb
 set noswapfile
 
-" Optimize 
+" Optimize
 set synmaxcol=3000    "Prevent breaking syntax hightlight when string too long. Max = 3000"
 set lazyredraw
 au! BufNewFile,BufRead *.json set foldmethod=indent " Change foldmethod for specific filetype
@@ -127,7 +127,7 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin Setting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set theme 
+" Set theme for joshdick/onedark.vim
 colorscheme onedark
 
 " Overwrite some color highlight 
