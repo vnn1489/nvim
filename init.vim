@@ -60,15 +60,33 @@ nmap <M-Up> :resize -1<CR>
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 nmap /\ :noh<CR>
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffers
 nnoremap <leader>w :w<CR>
 nnoremap <leader>bd :bd/tn<CR>
 nnoremap <leader>bp :bp<CR>
 nnoremap <leader>bn :bn<CR>
-nnoremap <leader>be :enew<CR> " FIGBUG
+nnoremap <leader>be :enew<CR> " vnn1489
 nnoremap <leader>bl :ls<CR>
 nnoremap <leader>bq :bufdo bd<CR>
-nnoremap <leader>qa :qa<CR> " FIGBUG
+nnoremap <leader>qa :qa<CR> " vnn1489
+
+" go to specifically buffer with buffer number
+function! SwitchToBufferNumber(Number)
+    " Check if the argument is a valid number
+    if a:Number =~ '^\d\+$'
+        " Switch to the specified buffer number
+        execute 'buffer ' . a:Number
+    else
+        echo "Invalid buffer number"
+    endif
+endfunction
+
+" Map the function to a key combination, e.g., <leader><buffer_number>
+nnoremap <leader>b :call SwitchToBufferNumber(input("Enter buffer number: "))<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin list
