@@ -1,8 +1,8 @@
 lua print('Neovim started...')
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=a                 " Enable mouse
 set expandtab               " Tab setting 
 set tabstop=4               " Tab setting 
@@ -47,11 +47,11 @@ autocmd FileChangedShellPost *
     \ | echohl None
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Key mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Resize pane
-nmap <M-Right> :vertical resize +1<CR>    
+nmap <M-Right> :vertical resize +1<CR> 
 nmap <M-Left> :vertical resize -1<CR>
 nmap <M-Down> :resize +1<CR>
 nmap <M-Up> :resize -1<CR>
@@ -60,8 +60,6 @@ nmap <M-Up> :resize -1<CR>
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 nmap /\ :noh<CR>
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffers
 nnoremap <leader>w :w<CR>
 nnoremap <leader>bd :bd/tn<CR>
@@ -72,6 +70,10 @@ nnoremap <leader>bl :ls<CR>
 nnoremap <leader>bq :bufdo bd<CR>
 nnoremap <leader>qa :qa<CR> " vnn1489
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key mappings use function
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " go to specifically buffer with buffer number
 function! SwitchToBufferNumber(Number)
     " Check if the argument is a valid number
@@ -83,15 +85,26 @@ function! SwitchToBufferNumber(Number)
     endif
 endfunction
 
-" Map the function to a key combination, e.g., <leader><buffer_number>
 nnoremap <leader>b :call SwitchToBufferNumber(input("Enter buffer number: "))<CR>
+
+" delete specifically buffer with buffer number
+function! DeleteBufferNumber(Number)
+    " Check if the argument is a valid number
+    if a:Number =~ '^\d\+$'
+        " Switch to the specified buffer number
+        execute 'buffer ' . a:Number
+    else
+        echo "Invalid buffer number"
+    endif
+endfunction
+
+nnoremap <leader>bd :call DeleteBufferNumber(input("Enter buffer number: "))<CR>
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugin list
+" Plugin list
 " (used with Vim-plug - https://github.com/junegunn/vim-plug)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin(stdpath('config').'/plugged')
 " Theme
   Plug 'joshdick/onedark.vim',                  " Dark theme
@@ -156,9 +169,10 @@ call plug#begin(stdpath('config').'/plugged')
   Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugin Setting
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin Setting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set theme for joshdick/onedark.vim
 colorscheme onedark
 
