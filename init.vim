@@ -106,6 +106,9 @@ nnoremap <leader>bd :call DeleteBufferNumber(input("Enter buffer number: "))<CR>
 " (used with Vim-plug - https://github.com/junegunn/vim-plug)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin(stdpath('config').'/plugged')
+" Pane navigator
+  Plug 'christoomey/vim-tmux-navigator'
+
 " Theme
   Plug 'joshdick/onedark.vim',                  " Dark theme
 
@@ -198,3 +201,4 @@ nnoremap <silent> <leader>bd :bp \| sp \| bn \| bd<CR>
 for setting_file in split(glob(stdpath('config').'/settings/*.vim'))
   execute 'source' setting_file
 endfor
+
