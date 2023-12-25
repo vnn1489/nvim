@@ -110,7 +110,7 @@ call plug#begin(stdpath('config').'/plugged')
   Plug 'christoomey/vim-tmux-navigator'
 
 " Theme
-  Plug 'joshdick/onedark.vim',                  " Dark theme
+  Plug 'joshdick/onedark.vim'                  " Dark theme
 
 " File browser
   Plug 'preservim/nerdTree'                     " File browser  
