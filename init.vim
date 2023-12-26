@@ -62,7 +62,7 @@ nmap /\ :noh<CR>
 
 " Buffers
 nnoremap <leader>w :w<CR>
-nnoremap <leader>bd :bd/tn<CR>
+nnoremap <leader>bd :bd<CR>
 nnoremap <leader>bp :bp<CR>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>be :enew<CR> " vnn1489
