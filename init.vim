@@ -70,6 +70,9 @@ nnoremap <leader>bl :ls<CR>
 nnoremap <leader>bq :bufdo bd<CR>
 nnoremap <leader>qa :qa<CR> " vnn1489
 
+" Other
+nnoremap <leader>gt :cd %:p:h<CR> " go to the directory, where stored file are edting
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings use function
