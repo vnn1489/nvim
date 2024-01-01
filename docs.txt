@@ -1,1 +1,3 @@
 https://www.baeldung.com/linux/shell-scripting-setup-development-environment
+terminal: akinsho/toggleterm.nvim
+file browser: nvim-tree/nvim-tree.lua
